@@ -1,0 +1,10 @@
+package com.gametime.common;
+
+import java.util.List;
+
+/**
+ * Created by dave on 2/6/2017.
+ */
+public class Conference {
+   List<Division> divisions;
+}
