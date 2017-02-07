@@ -1,9 +1,7 @@
 "# gametime" 
 
 
-Todo
-Create PlayerAttributes
-Create PlayerSkillSets
-    Unit tests
-
-Create InMemory Database
+    Todo
+Create PlayerAttributes  
+Create PlayerSkillSets  
+Create InMemory Database  
