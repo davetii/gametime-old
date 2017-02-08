@@ -2,6 +2,5 @@
 
 
     Todo
-Create PlayerAttributes  
-Create PlayerSkillSets  
+Create SkillSets Algorithm
 Create InMemory Database  
