@@ -1,16 +1,14 @@
-package com.gametime.common;
+package com.gametime.data.common;
 
 /**
  * Created by dave on 2/6/2017.
  */
 public class Coach {
 
-
-
-    long id;
-    Person person;
-    CoachAttribute attributes;
-    CoachSkillSet SkillSet;
+    private long id;
+    private Person person;
+    private CoachAttribute attributes;
+    private CoachSkillSet SkillSet;
 
     public Person getPerson() {
         return person;

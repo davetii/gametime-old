@@ -1,14 +1,17 @@
-package com.gametime.common;
+package com.gametime.data.common;
 
 /**
  * Created by dave on 2/6/2017.
  */
+import org.springframework.stereotype.Component;
+
+@Component
 public class Player {
 
-    long id;
-    Person person;
-    PlayerAttributes attributes;
-    PlayerSkillSet skillSet;
+    private long id;
+    private Person person;
+    private PlayerAttributes attributes;
+    private PlayerSkillSet skillSet;
 
     public Person getPerson() {
         return person;
@@ -42,3 +45,4 @@ public class Player {
         this.id = id;
     }
 }
+

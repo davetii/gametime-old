@@ -1,13 +1,20 @@
-package com.gametime.common;
-
+package com.gametime.data.common;
 /**
  * Created by dave on 2/6/2017.
  */
+
+
 public class Person {
     private String firstName;
     private String lastName;
     private int height;
     private int weight;
+
+
+    public Person(String f, String l) {
+        firstName = f;
+        lastName = l;
+    }
 
     public String getFirstName() {
         return firstName;

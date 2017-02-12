@@ -1,6 +1,6 @@
-package com.gametime.api;
+package com.gametime.data.api;
 
-import com.gametime.common.Team;
+import com.gametime.data.common.Team;
 
 import java.util.List;
 

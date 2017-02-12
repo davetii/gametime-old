@@ -4,16 +4,24 @@
                              http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.greatwideweb</groupId>
-        <artifactId>gametime</artifactId>
-        <version>1.0</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.1.RELEASE</version>
     </parent>
 
+
+    <groupId>com.greatwideweb</groupId>
+    <version>1.0</version>
     <artifactId>gametime-common</artifactId>
     <packaging>jar</packaging>
-    <name>Gametime API</name>
+    <name>Gametime Common</name>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.3.4.RELEASE</version>
+        </dependency>
         
     </dependencies>
 </project>

@@ -1,4 +1,4 @@
-package com.gametime.common;
+package com.gametime.data.common;
 
 /**
  * Created by dave on 2/6/2017.
@@ -10,6 +10,17 @@ public class PlayerAttributes {
     private int desire;
     private int ego;
     private int endurance;
+    private int energy;
+    private int handle;
+    private int health;
+    private int intelligence;
+    private int luck;
+    private int person;
+    private int shotSelection;
+    private int shotSkill;
+    private int size;
+    private int speed;
+    private int strength;
 
     public int getAgility() {
         return agility;
@@ -139,17 +150,7 @@ public class PlayerAttributes {
         this.strength = strength;
     }
 
-    private int energy;
-    private int handle;
-    private int health;
-    private int intelligence;
-    private int luck;
-    private int person;
-    private int shotSelection;
-    private int shotSkill;
-    private int size;
-    private int speed;
-    private int strength;
+
 
 
 
