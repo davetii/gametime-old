@@ -1,4 +1,4 @@
-package com.gametime.data.common;
+package com.gametime.common;
 
 import java.util.List;
 

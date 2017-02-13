@@ -1,6 +1,8 @@
 package com.gametime.data.service;
 
-import com.gametime.data.dto.PlayerData;
+import com.gametime.common.Player;
+import com.gametime.common.Team;
+import com.gametime.data.PlayerDataVO;
 
 import java.util.List;
 
@@ -8,11 +10,13 @@ import java.util.List;
  * Created by dave on 2/12/2017.
  */
 public interface PlayerDataService {
-    List<PlayerData> getAllPlayers();
-    PlayerData getPlayer(Long id);
-    void savePlayer(PlayerData p);
-    List<PlayerData> findByLastName(String lastName);
+    List<PlayerDataVO> getAllPlayers();
+    PlayerDataVO getPlayer(Long id);
+    void savePlayer(Player p);
+    List<PlayerDataVO> findByLastName(String lastName);
+    List<PlayerDataVO> findByTeam(Long TeamId);
+    List<PlayerDataVO> findByTeam(Team team);
     void deleteAllPlayers();
     void deletePlayer(Long id);
-    void deletePlayer(PlayerData p);
+    void deletePlayer(Player p);
 }

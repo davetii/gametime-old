@@ -11,7 +11,7 @@
 
 
     <groupId>com.greatwideweb</groupId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <artifactId>gametime-common</artifactId>
     <packaging>jar</packaging>
     <name>Gametime Common</name>
@@ -24,4 +24,9 @@
         </dependency>
         
     </dependencies>
+
+
+
+
+
 </project>

@@ -1,5 +1,6 @@
 package test;
 
+import com.gametime.common.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +13,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.gametime.data.common.Person;
-
-
 /**
  * Created by dave on 2/9/2017.
  */
@@ -23,9 +21,11 @@ public class TestRun implements CommandLineRunner{
 
     private static final Logger log = LoggerFactory.getLogger(TestRun.class);
 
+    /*
     public static void main(String args[]) {
         SpringApplication.run(TestRun.class, args);
     }
+    */
 
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -54,7 +54,10 @@ public class TestRun implements CommandLineRunner{
 
         jdbcTemplate.query(
                 "SELECT id, first_name, last_name FROM players WHERE first_name = ?", new Object[] { "Josh" },
-                (rs, rowNum) -> new Person(rs.getString("first_name"), rs.getString("last_name"))
+                (rs, rowNum) -> new Person(
+                        rs.getString("first_name"),
+                        rs.getString("last_name"), null, null, null
+                )
         ).forEach(thing -> log.info(thing.toString()));
 
     }

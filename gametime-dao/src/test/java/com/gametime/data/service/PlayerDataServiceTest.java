@@ -1,8 +1,9 @@
 package com.gametime.data.service;
 
+import com.gametime.common.Person;
+import com.gametime.common.Player;
 import com.gametime.data.DataAccessApplication;
-import com.gametime.data.common.Player;
-import com.gametime.data.dto.PlayerData;
+import com.gametime.data.PlayerDataVO;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -21,12 +23,14 @@ import java.util.List;
 @ContextConfiguration(classes = DataAccessApplication.class)
 public class PlayerDataServiceTest {
 
+
     @Autowired
     private PlayerDataService service;
 
     @Before
     public void setupTest() {
         loadTestPlayers();
+
     }
 
     @After
@@ -37,59 +41,67 @@ public class PlayerDataServiceTest {
     @Test
     public void ensurePlayerSavesAsExpected(){
         service.deleteAllPlayers();
-        service.savePlayer(createPlayerData("Ben", "Wallace"));
+        service.savePlayer(createPlayerData(1l, "Ben", "Wallace"));
         Assert.assertEquals(1, service.getAllPlayers().size());
     }
 
     @Test
     public void ensureGetByLastNameWorksAsExpected() {
-        List<PlayerData> list = service.findByLastName("Morris");
+        List<PlayerDataVO> list = service.findByLastName("Morris");
         Assert.assertEquals(1, list.size());
     }
 
     @Test
-    public void ensureDeletesPlayerViaIDFunctrionsAsExpected(){
-        PlayerData p = service.getAllPlayers().get(0);
+    public void ensureDeletesPlayerViaIDFunctionsAsExpected(){
+        PlayerDataVO p = service.getAllPlayers().get(0);
         String lastName = p.getLastName();
         service.deletePlayer(p.getId());
         Assert.assertEquals(0, service.findByLastName(lastName).size());
     }
 
     @Test
-    public void ensureDeletesPlayerFunctrionsAsExpected(){
-        PlayerData p = service.getAllPlayers().get(0);
+    public void ensureDeletesPlayerFunctionsAsExpected(){
+        PlayerDataVO p = service.getAllPlayers().get(0);
         String lastName = p.getLastName();
-        service.deletePlayer(p);
+        service.deletePlayer(new Player(p));
         Assert.assertEquals(0, service.findByLastName(lastName).size());
     }
 
     @Test
     public void ensureUpdatePlayerFunctionsAsExpected(){
-        PlayerData p = service.getAllPlayers().get(0);
+        PlayerDataVO p = service.getAllPlayers().get(0);
         Assert.assertEquals(0, p.getAgility());
         p.setAgility(10);
-        service.savePlayer(p);
+        service.savePlayer(new Player(p));
         p = service.getPlayer(p.getId());
         Assert.assertEquals(10, p.getAgility());
     }
 
-    private PlayerData createPlayerData(String firstName, String lastName) {
-        PlayerData p = new PlayerData();
-        p.setFirstName(firstName);
-        p.setLastName(lastName);
+    public void findByTeamIdFunctionsAsExpected() {
+        Assert.assertEquals(0, service.findByTeam(9l));
+        Assert.assertEquals(3, service.findByTeam(1l));
+        Assert.assertEquals(1, service.findByTeam(2l));
+        Assert.assertEquals(2, service.findByTeam(4l));
+    }
+
+    private Player createPlayerData(Long teamId, String firstName, String lastName) {
+        Player p = new Player();
+        p.setTeamId(teamId);
+        Person person = new Person(firstName, lastName, null, null, new GregorianCalendar());
+        p.setPerson(person);
         return p;
     }
 
     private void loadTestPlayers() {
-        service.savePlayer(createPlayerData("Andre", "Drummond"));
-        service.savePlayer(createPlayerData("Kentavius", "Pope"));
-        service.savePlayer(createPlayerData("Marcus", "Morris"));
-        service.savePlayer(createPlayerData("Jon", "Leur"));
-        service.savePlayer(createPlayerData("Tobias", "Harris"));
-        service.savePlayer(createPlayerData("Reggie", "Jackson"));
-        service.savePlayer(createPlayerData("Stanly", "Johnson"));
-        service.savePlayer(createPlayerData("Ish", "Smith"));
-        service.savePlayer(createPlayerData("Aaron", "Baynes"));
+        service.savePlayer(createPlayerData(1l, "Andre", "Drummond"));
+        service.savePlayer(createPlayerData(1l, "Kentavius", "Pope"));
+        service.savePlayer(createPlayerData(1l, "Marcus", "Morris"));
+        service.savePlayer(createPlayerData(2l, "Jon", "Leur"));
+        service.savePlayer(createPlayerData(3l, "Tobias", "Harris"));
+        service.savePlayer(createPlayerData(4l, "Reggie", "Jackson"));
+        service.savePlayer(createPlayerData(4l, "Stanly", "Johnson"));
+        service.savePlayer(createPlayerData(5l, "Ish", "Smith"));
+        service.savePlayer(createPlayerData(6l, "Aaron", "Baynes"));
     }
 
 

@@ -1,7 +1,7 @@
-package com.gametime.data.api;
+package com.gametime.api;
 
-import com.gametime.data.common.Player;
-import com.gametime.data.common.Position;
+import com.gametime.common.Player;
+import com.gametime.common.Position;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import java.util.List;
  * Created by dave on 2/6/2017.
  */
 public interface PlayerService {
-    Player getPlayer (int playerId);
+    Player getPlayer (Long playerId);
     List<Player> findPlayer (String searchTerm);
     List<Player> getPlayersByPosition (Position position);
-    List<Player> getPlayersByTeam (int teamId);
+    List<Player> getPlayersByTeam (Long teamId);
 }

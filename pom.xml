@@ -7,7 +7,7 @@
     <groupId>com.greatwideweb</groupId>
     <artifactId>gametime</artifactId>
     <packaging>pom</packaging>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <name>Gametime Application</name>
 
     <parent>
@@ -25,6 +25,7 @@
         <module>gametime-api</module>
         <module>gametime-common</module>
         <module>gametime-dao</module>
+        <module>gametime-service-impl</module>
     </modules>
 
     <dependencies>
@@ -41,4 +42,13 @@
 
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

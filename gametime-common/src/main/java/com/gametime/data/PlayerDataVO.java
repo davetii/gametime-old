@@ -1,10 +1,22 @@
-package com.gametime.data.common;
+package com.gametime.data;
+
+import org.springframework.stereotype.Component;
+
+import java.sql.Date;
 
 /**
- * Created by dave on 2/6/2017.
+ * Created by dave on 2/12/2017.
  */
-public class PlayerAttributes {
+@Component
+public class PlayerDataVO {
 
+    private Long id;
+    private Long teamId;
+    private String firstName;
+    private String lastName;
+    private String height;
+    private String weight;
+    private java.sql.Date dateOfBirth;
     private int agility;
     private int charisma;
     private int desire;
@@ -21,6 +33,62 @@ public class PlayerAttributes {
     private int size;
     private int speed;
     private int strength;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(Long teamId) {
+        this.teamId = teamId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 
     public int getAgility() {
         return agility;
@@ -149,11 +217,4 @@ public class PlayerAttributes {
     public void setStrength(int strength) {
         this.strength = strength;
     }
-
-
-
-
-
-
-
 }

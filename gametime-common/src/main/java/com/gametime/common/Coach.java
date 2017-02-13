@@ -1,4 +1,4 @@
-package com.gametime.data.common;
+package com.gametime.common;
 
 /**
  * Created by dave on 2/6/2017.
