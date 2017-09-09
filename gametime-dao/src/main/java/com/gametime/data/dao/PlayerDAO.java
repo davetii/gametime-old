@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by dave on 2/11/2017.
  */
-public interface PlayerDAO extends CrudRepository<PlayerEntity, Long> {
+public interface PlayerDAO extends CrudRepository<PlayerEntity, Integer> {
     List<PlayerEntity> findByLastName(String lastName);
-    List<PlayerEntity> findByTeamId(Long teamId);
+    List<PlayerEntity> findByTeamId(Integer teamId);
 }

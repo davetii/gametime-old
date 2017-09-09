@@ -4,13 +4,9 @@ package com.gametime.common;
  * Created by dave on 2/6/2017.
  */
 public class Team {
-    Long id;
-
-    public Long getId() {
+    Integer id;
+    public Integer getId() {
         return id;
     }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public void setId(Integer newValue) { this.id = newValue; }
 }

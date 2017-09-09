@@ -26,7 +26,7 @@ public class PlayerDataServiceImpl implements PlayerDataService {
     }
 
     @Override
-    public PlayerDataVO getPlayer(Long id) {
+    public PlayerDataVO getPlayer(Integer id) {
         return dao.findOne(id).toDataVO();
     }
 
@@ -46,7 +46,7 @@ public class PlayerDataServiceImpl implements PlayerDataService {
     }
 
     @Override
-    public void deletePlayer(Long id) {
+    public void deletePlayer(Integer id) {
         dao.delete(id);
     }
 
@@ -56,7 +56,7 @@ public class PlayerDataServiceImpl implements PlayerDataService {
     }
 
     @Override
-    public List<PlayerDataVO> findByTeam(Long teamId) {
+    public List<PlayerDataVO> findByTeam(Integer teamId) {
         return entityListToDataList(dao.findByTeamId(teamId));
     }
 

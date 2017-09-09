@@ -17,7 +17,7 @@ public class TeamDataServiceImpl implements TeamDataService {
     private TeamDAO dao;
 
     @Override
-    public TeamEntity getTeam(Long id) {
+    public TeamEntity getTeam(Integer id) {
         return dao.findOne(id);
     }
 
@@ -42,7 +42,7 @@ public class TeamDataServiceImpl implements TeamDataService {
     }
 
     @Override
-    public void deleteTeam(Long id) {
+    public void deleteTeam(Integer id) {
         dao.delete(id);
     }
 

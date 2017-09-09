@@ -6,23 +6,23 @@ package com.gametime.common;
 public class PlayerSkillSet {
 
     private final double acumen;
-    private final double ballProtection;
+    private final double ballSecurity;
     private final double defense;
     private final double defenseRebound;
     private final double drive;
     private final double freeThrows;
-    private final double pressureDefense;
     private final double longRange;
     private final double offense;
     private final double offenseRebound;
     private final double passing;
     private final double perimeter;
     private final double post;
+    private final double pressureDefense;
     private final double teamDefense;
 
     public PlayerSkillSet(PlayerAttributes attribs) {
         acumen = 0;
-        ballProtection = 0;
+        ballSecurity = 0;
         defense = 0;
         defenseRebound =0;
         drive =0;
@@ -35,24 +35,12 @@ public class PlayerSkillSet {
         perimeter = 0;
         post= 0;
         teamDefense = 0;
-
-
-
-
-
-
-
-
-
-
     }
     public double getAcumen() {
         return acumen;
     }
 
-    public double getBallProtection() {
-        return ballProtection;
-    }
+    public double getBallSecurity() { return ballSecurity; }
 
     public double getDefense() {
         return defense;

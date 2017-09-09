@@ -9,8 +9,8 @@ import java.util.List;
  * Created by dave on 2/6/2017.
  */
 public interface PlayerService {
-    Player getPlayer (Long playerId);
+    Player getPlayer (Integer playerId);
     List<Player> findPlayer (String searchTerm);
     List<Player> getPlayersByPosition (Position position);
-    List<Player> getPlayersByTeam (Long teamId);
+    List<Player> getPlayersByTeam (Integer teamId);
 }

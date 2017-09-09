@@ -13,10 +13,10 @@ import java.sql.Date;
 public class PlayerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
     @Column(name ="team_id")
-    private Long teamId;
+    private Integer teamId;
 
     @Column(name ="first_name")
     private String firstName;
@@ -81,8 +81,8 @@ public class PlayerEntity {
     @Column(name ="strength")
     private int strength;
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
     public String getFirstName() { return firstName; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
@@ -147,8 +147,8 @@ public class PlayerEntity {
     public int getStrength() { return strength; }
     public void setStrength(int strength) { this.strength = strength; }
 
-    public Long getTeamId() { return teamId; }
-    public void setTeamId(Long teamId) { this.teamId = teamId; }
+    public Integer getTeamId() { return teamId; }
+    public void setTeamId(Integer teamId) { this.teamId = teamId; }
 
     public PlayerDataVO toDataVO() {
         PlayerDataVO vo = new PlayerDataVO();

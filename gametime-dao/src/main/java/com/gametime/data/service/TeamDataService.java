@@ -8,12 +8,12 @@ import java.util.List;
  * Created by dave on 2/12/2017.
  */
 public interface TeamDataService {
-    TeamEntity getTeam(Long id);
+    TeamEntity getTeam(Integer id);
     List<TeamEntity> getAllTeams();
     List<TeamEntity> getTeamsByDivision(Integer id);
     void saveTeam(TeamEntity td);
     void deleteTeam(TeamEntity td);
-    void deleteTeam(Long id);
+    void deleteTeam(Integer id);
     void deleteAllTeams();
 
 

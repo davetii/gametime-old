@@ -5,40 +5,40 @@ package com.gametime.data;
  */
 public class TeamDataVO {
 
-    Long id;
+    Integer id;
     Integer divisionId;
     String logo;
     String locale;
+    String localeShort;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
-
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Integer newValue) {
+        this.id = newValue;
     }
 
     public Integer getDivisionId() {
         return divisionId;
     }
-
-    public void setDivisionId(Integer divisionId) {
-        this.divisionId = divisionId;
+    public void setDivisionId(Integer newValue) {
+        this.divisionId = newValue;
     }
 
     public String getLogo() {
         return logo;
     }
-
-    public void setLogo(String logo) {
-        this.logo = logo;
+    public void setLogo(String newValue) {
+        this.logo = newValue;
     }
 
     public String getLocale() {
         return locale;
     }
-
-    public void setLocale(String locale) {
-        this.locale = locale;
+    public void setLocale(String newValue) {
+        this.locale = newValue;
     }
+
+    public String getLocaleShort() { return localeShort; }
+    public void setLocaleShort(String newValue) { this.localeShort = newValue; }
 }

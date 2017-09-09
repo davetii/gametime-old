@@ -12,8 +12,9 @@ import java.util.GregorianCalendar;
 @Component
 public class Player {
 
-    private long id;
-    private long teamId;
+    private Integer id;
+    private Integer teamId;
+    private int yearsPro;
     private Person person;
     private PlayerAttributes attributes;
     private PlayerSkillSet skillSet;
@@ -56,15 +57,18 @@ public class Player {
         this.skillSet = skillSet;
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public long getTeamId() { return teamId; }
-    public void setTeamId(long teamId) { this.teamId = teamId; }
+    public Integer getTeamId() { return teamId; }
+    public void setTeamId(Integer teamId) { this.teamId = teamId; }
+
+    public int getYearsPro() { return yearsPro; }
+    public void setYearsPro(int newValue) { this.yearsPro = newValue; }
 
 }
 

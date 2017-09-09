@@ -11,12 +11,12 @@ import java.util.List;
  */
 public interface PlayerDataService {
     List<PlayerDataVO> getAllPlayers();
-    PlayerDataVO getPlayer(Long id);
+    PlayerDataVO getPlayer(Integer id);
     void savePlayer(Player p);
     List<PlayerDataVO> findByLastName(String lastName);
-    List<PlayerDataVO> findByTeam(Long TeamId);
+    List<PlayerDataVO> findByTeam(Integer TeamId);
     List<PlayerDataVO> findByTeam(Team team);
     void deleteAllPlayers();
-    void deletePlayer(Long id);
+    void deletePlayer(Integer id);
     void deletePlayer(Player p);
 }

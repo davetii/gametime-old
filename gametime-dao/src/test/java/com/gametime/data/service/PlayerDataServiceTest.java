@@ -41,7 +41,7 @@ public class PlayerDataServiceTest {
     @Test
     public void ensurePlayerSavesAsExpected(){
         service.deleteAllPlayers();
-        service.savePlayer(createPlayerData(1l, "Ben", "Wallace"));
+        service.savePlayer(createPlayerData(1, "Ben", "Wallace"));
         Assert.assertEquals(1, service.getAllPlayers().size());
     }
 
@@ -78,13 +78,13 @@ public class PlayerDataServiceTest {
     }
 
     public void findByTeamIdFunctionsAsExpected() {
-        Assert.assertEquals(0, service.findByTeam(9l));
-        Assert.assertEquals(3, service.findByTeam(1l));
-        Assert.assertEquals(1, service.findByTeam(2l));
-        Assert.assertEquals(2, service.findByTeam(4l));
+        Assert.assertEquals(0, service.findByTeam(9));
+        Assert.assertEquals(3, service.findByTeam(1));
+        Assert.assertEquals(1, service.findByTeam(2));
+        Assert.assertEquals(2, service.findByTeam(4));
     }
 
-    private Player createPlayerData(Long teamId, String firstName, String lastName) {
+    private Player createPlayerData(Integer teamId, String firstName, String lastName) {
         Player p = new Player();
         p.setTeamId(teamId);
         Person person = new Person(firstName, lastName, null, null, new GregorianCalendar());
@@ -93,15 +93,15 @@ public class PlayerDataServiceTest {
     }
 
     private void loadTestPlayers() {
-        service.savePlayer(createPlayerData(1l, "Andre", "Drummond"));
-        service.savePlayer(createPlayerData(1l, "Kentavius", "Pope"));
-        service.savePlayer(createPlayerData(1l, "Marcus", "Morris"));
-        service.savePlayer(createPlayerData(2l, "Jon", "Leur"));
-        service.savePlayer(createPlayerData(3l, "Tobias", "Harris"));
-        service.savePlayer(createPlayerData(4l, "Reggie", "Jackson"));
-        service.savePlayer(createPlayerData(4l, "Stanly", "Johnson"));
-        service.savePlayer(createPlayerData(5l, "Ish", "Smith"));
-        service.savePlayer(createPlayerData(6l, "Aaron", "Baynes"));
+        service.savePlayer(createPlayerData(1, "Andre", "Drummond"));
+        service.savePlayer(createPlayerData(1, "Kentavius", "Pope"));
+        service.savePlayer(createPlayerData(1, "Marcus", "Morris"));
+        service.savePlayer(createPlayerData(2, "Jon", "Leur"));
+        service.savePlayer(createPlayerData(3, "Tobias", "Harris"));
+        service.savePlayer(createPlayerData(4, "Reggie", "Jackson"));
+        service.savePlayer(createPlayerData(4, "Stanly", "Johnson"));
+        service.savePlayer(createPlayerData(5, "Ish", "Smith"));
+        service.savePlayer(createPlayerData(6, "Aaron", "Baynes"));
     }
 
 

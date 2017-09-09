@@ -12,8 +12,7 @@ import javax.persistence.*;
 public class TeamEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    Integer id;
 
     @Column(name ="division_id")
     Integer divisionId;
@@ -24,39 +23,44 @@ public class TeamEntity {
     @Column(name ="locale")
     String locale;
 
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
+    @Column(name ="locale_short")
+    String localeShort;
+
+    public Integer getId() { return id; }
+    public void setId(Integer newValue) {
+        this.id = newValue;
     }
 
     public Integer getDivisionId() {
         return divisionId;
     }
-    public void setDivisionId(Integer divisionId) {
-        this.divisionId = divisionId;
+    public void setDivisionId(Integer newValue) {
+        this.divisionId = newValue;
     }
 
     public String getLogo() {
         return logo;
     }
-    public void setLogo(String logo) {
-        this.logo = logo;
+    public void setLogo(String newValue) {
+        this.logo = newValue;
     }
 
     public String getLocale() {
         return locale;
     }
-    public void setLocale(String locale) {
-        this.locale = locale;
+    public void setLocale(String newValue) {
+        this.locale = newValue;
     }
+
+    public String getLocaleShort() { return this.localeShort; }
+    public void setLocaleShort(String newValue) { this.localeShort = newValue; }
 
     public TeamDataVO toDataVO() {
         TeamDataVO t = new TeamDataVO();
         t.setDivisionId(divisionId);
         t.setId(id);
         t.setLocale(locale);
+        t.setLocaleShort(localeShort);
         t.setLogo(logo);
         return t;
     }

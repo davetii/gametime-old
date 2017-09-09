@@ -10,8 +10,8 @@ import java.sql.Date;
 @Component
 public class PlayerDataVO {
 
-    private Long id;
-    private Long teamId;
+    private Integer id;
+    private Integer teamId;
     private String firstName;
     private String lastName;
     private String height;
@@ -34,19 +34,19 @@ public class PlayerDataVO {
     private int speed;
     private int strength;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Long getTeamId() {
+    public int getTeamId() {
         return teamId;
     }
 
-    public void setTeamId(Long teamId) {
+    public void setTeamId(int teamId) {
         this.teamId = teamId;
     }
 

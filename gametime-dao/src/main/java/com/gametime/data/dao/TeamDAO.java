@@ -9,6 +9,6 @@ import java.util.List;
 /**
  * Created by dave on 2/12/2017.
  */
-public interface TeamDAO extends CrudRepository<TeamEntity, Long> {
+public interface TeamDAO extends CrudRepository<TeamEntity, Integer> {
     List<TeamEntity> getTeamsByDivisionId(int id);
 }

@@ -5,7 +5,7 @@ package com.gametime.common;
  */
 public class Coach {
 
-    private long id;
+    private Integer id;
     private Person person;
     private CoachAttribute attributes;
     private CoachSkillSet SkillSet;
@@ -34,11 +34,11 @@ public class Coach {
         SkillSet = skillSet;
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
