@@ -1,7 +1,8 @@
 package com.gametime.data.service;
 
+import com.gametime.api.TeamDataService;
 import com.gametime.data.DataAccessApplication;
-import com.gametime.data.entity.TeamEntity;
+import com.gametime.data.TeamDataVO;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -38,7 +39,7 @@ public class TeamDataServiceTest {
 
     @Test
     public void ensureFilterByDivisionReturnsExpected() {
-        List<TeamEntity> list = service.getTeamsByDivision(1);
+        List<TeamDataVO> list = service.getTeamsByDivision(1);
         Assert.assertEquals(list.size(), 4);
         Assert.assertTrue(assertTeamIdExistsInList(list, 1));
         Assert.assertTrue(assertTeamIdExistsInList(list, 2));
@@ -54,7 +55,7 @@ public class TeamDataServiceTest {
 
     @Test
     public void ensureDeleteTeamReturnsExpected() {
-        List<TeamEntity> list = service.getAllTeams();
+        List<TeamDataVO> list = service.getAllTeams();
         Assert.assertEquals(list.size(), 16);
         service.deleteTeam(list.get(0).getId());
         service.deleteTeam(list.get(1));
@@ -63,7 +64,7 @@ public class TeamDataServiceTest {
 
     @Test
     public void ensureGetTeamByIdFunctionsAsExpected() {
-        TeamEntity t = service.getTeam(7);
+        TeamDataVO t = service.getTeam(7);
         Assert.assertEquals(t.getId(), Integer.valueOf(7));
         Assert.assertEquals(t.getLocale(), "Cleveland");
         Assert.assertEquals(t.getDivisionId(), Integer.valueOf(2));
@@ -72,19 +73,13 @@ public class TeamDataServiceTest {
 
     @Test
     public void ensureUpdateTeamFunctionsAsExpected() {
-        TeamEntity t = service.getTeam(7);
+        TeamDataVO t = service.getTeam(7);
         Assert.assertEquals(t.getLogo(), "Indians");
         t.setLogo("Browns");
         service.saveTeam(t);
-        TeamEntity t2 = service.getTeam(7);
+        TeamDataVO t2 = service.getTeam(7);
         Assert.assertEquals(t2.getLogo(), "Browns");
     }
-
-
-
-
-
-
 
     private void assertGetAllTeamsSize(int i) {
         Assert.assertEquals(service.getAllTeams().size(), i);
@@ -113,8 +108,8 @@ public class TeamDataServiceTest {
         service.saveTeam(buildTeam(16, 4, "UT","Utah", "Aggies"));
     }
 
-    private TeamEntity buildTeam(int id, int div, String localeShort, String locale, String logo) {
-        TeamEntity t = new TeamEntity();
+    private TeamDataVO buildTeam(int id, int div, String localeShort, String locale, String logo) {
+        TeamDataVO t = new TeamDataVO();
         t.setId(id);
         t.setLocaleShort(localeShort);
         t.setDivisionId(div);
@@ -123,8 +118,8 @@ public class TeamDataServiceTest {
         return t;
     }
 
-    private boolean assertTeamIdExistsInList(List<TeamEntity> list, int i) {
-        for (TeamEntity t : list) {
+    private boolean assertTeamIdExistsInList(List<TeamDataVO> list, int i) {
+        for (TeamDataVO t : list) {
             if (t.getId() == i) { return true; }
         }
         return false;

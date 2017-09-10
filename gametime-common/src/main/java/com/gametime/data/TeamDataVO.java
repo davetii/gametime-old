@@ -41,4 +41,5 @@ public class TeamDataVO {
 
     public String getLocaleShort() { return localeShort; }
     public void setLocaleShort(String newValue) { this.localeShort = newValue; }
+
 }

@@ -1,4 +1,4 @@
-package com.gametime.data.service;
+package com.gametime.api;
 
 import com.gametime.common.Player;
 import com.gametime.common.Team;

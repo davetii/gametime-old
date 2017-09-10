@@ -19,12 +19,10 @@ public class Player {
     private PlayerAttributes attributes;
     private PlayerSkillSet skillSet;
 
-    public Player() {
-
-    }
+    public Player() { }
 
     public Player(PlayerDataVO data) {
-        id = data.getId();
+        this.id = data.getId();
         teamId = data.getTeamId();
         Calendar dob = null;
         if (data.getDateOfBirth() != null) {
@@ -39,33 +37,23 @@ public class Player {
     public Person getPerson() {
         return person;
     }
-    public void setPerson(Person person) {
-        this.person = person;
-    }
+    public void setPerson(Person newValue) { this.person = newValue; }
 
     public PlayerAttributes getAttributes() {
         return attributes;
     }
-    public void setAttributes(PlayerAttributes attributes) {
-        this.attributes = attributes;
-    }
+    public void setAttributes(PlayerAttributes newValue) { this.attributes = newValue; }
 
     public PlayerSkillSet getSkillSet() {
         return skillSet;
     }
-    public void setSkillSet(PlayerSkillSet skillSet) {
-        this.skillSet = skillSet;
-    }
+    public void setSkillSet(PlayerSkillSet newValue) { this.skillSet = newValue; }
 
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    public Integer getId() { return id; }
+    public void setId(Integer newValue) { this.id = newValue; }
 
     public Integer getTeamId() { return teamId; }
-    public void setTeamId(Integer teamId) { this.teamId = teamId; }
+    public void setTeamId(Integer newValue) { this.teamId = newValue; }
 
     public int getYearsPro() { return yearsPro; }
     public void setYearsPro(int newValue) { this.yearsPro = newValue; }
