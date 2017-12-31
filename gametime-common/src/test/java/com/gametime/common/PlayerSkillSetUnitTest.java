@@ -97,20 +97,56 @@ public class PlayerSkillSetUnitTest {
 
     @Test
     public void ensureHighDefenseReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildHighDefense());
+        s = new PlayerSkillSet(buildHighDefense());
         Assert.assertEquals(s.getDefense(), 12.4d, 0d);
     }
 
     @Test
     public void ensureLowDefenseReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildLowDefense());
+        s = new PlayerSkillSet(buildLowDefense());
         Assert.assertEquals(s.getDefense(), 1.1d, 0d);
     }
 
     @Test
     public void ensureMixedDefenseReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildMixedDefense());
+        s = new PlayerSkillSet(buildMixedDefense());
         Assert.assertEquals(s.getDefense(), 9.6d, 0d);
+    }
+
+    @Test
+    public void ensureHighDefReboundreturnsExpected() {
+        s = new PlayerSkillSet(buildHighDefReb());
+        Assert.assertEquals(s.getDefenseRebound(), 10.0d, 0d);
+    }
+
+    @Test
+    public void ensureLowDefReboundreturnsExpected() {
+        s = new PlayerSkillSet(buildLowDefReb());
+        Assert.assertEquals(s.getDefenseRebound(), 0.0d, 0d);
+    }
+
+    @Test
+    public void ensureMixedDefReboundreturnsExpected() {
+        s = new PlayerSkillSet(buildMixedDefReb());
+        Assert.assertEquals(s.getDefenseRebound(), 3.1d, 0d);
+    }
+
+    @Test
+    public void ensureHighDriveReturnsExpected() {
+        s = new PlayerSkillSet(buildHighDrive());
+        Assert.assertEquals(s.getDrive(), 13.1d, 0d);
+    }
+
+    @Test
+    public void ensureLowDriveReturnsExpected() {
+        s = new PlayerSkillSet(buildLowDrive());
+        Assert.assertEquals(s.getDrive(), 1.0d, 0d);
+    }
+
+    @Test
+    public void ensureMixedDriveReturnsExpected() {
+        s = new PlayerSkillSet(buildMixedDrive());
+        Assert.assertEquals(s.getDrive(), 6.8d, 0d);
     }
 
 

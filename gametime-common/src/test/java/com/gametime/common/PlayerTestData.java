@@ -142,4 +142,54 @@ public class PlayerTestData {
         a.setSpeed(2);
         return a;
     }
+
+    public static PlayerAttributes buildHighDefReb() {
+        PlayerAttributes a = buildBase();
+        a.setDesire(8);
+        a.setStrength(8);
+        a.setSize(9);
+        a.setEnergy(9);
+        return a;
+    }
+
+    public static PlayerAttributes buildLowDefReb() {
+        PlayerAttributes a = buildBase();
+        a.setDesire(2);
+        a.setEnergy(1);
+        return a;
+    }
+
+    public static PlayerAttributes buildMixedDefReb() {
+        PlayerAttributes a = buildBase();
+        a.setDesire(2);
+        a.setStrength(8);
+        a.setSize(9);
+        a.setEnergy(2);
+        return a;
+    }
+
+    public static PlayerAttributes buildHighDrive() {
+        PlayerAttributes a = buildBase();
+        a.setEgo(10);
+        a.setAgility(9);
+        a.setShotSkill(9);
+        a.setHandle(9);
+        return a;
+    }
+
+    public static PlayerAttributes buildLowDrive() {
+        PlayerAttributes a = buildBase();
+        a.setAgility(2);
+        a.setShotSkill(2);
+        return a;
+    }
+
+    public static PlayerAttributes buildMixedDrive() {
+        PlayerAttributes a = buildBase();
+        a.setEgo(10);
+        a.setAgility(2);
+        a.setSpeed(2);
+        a.setShotSkill(10);
+        return a;
+    }
 }
