@@ -66,12 +66,53 @@ public class PlayerTestData {
         return new Date(cal.getTime().getTime());
     }
 
-
-    public static PlayerAttributes buildAcumenOfFive() {
-        return null;
+    public static PlayerAttributes buildBase() {
+        PlayerAttributes a = new PlayerAttributes();
+        a.setSize(5);
+        a.setEnergy(5);
+        a.setEndurance(5);
+        a.setEgo(5);
+        a.setCharisma(5);
+        a.setAgility(5);
+        a.setPerson(5);
+        a.setSpeed(5);
+        a.setLuck(5);
+        a.setDesire(5);
+        a.setIntelligence(5);
+        a.setShotSelection(5);
+        a.setShotSkill(5);
+        a.setStrength(5);
+        a.setHealth(5);
+        a.setHandle(5);
+        return a;
     }
 
     public static PlayerAttributes buildHighAcumen() {
-        return null;
+        PlayerAttributes a = buildBase();
+        a.setIntelligence(10);
+        return a;
+    }
+
+    public static PlayerAttributes buildLowAcumen() {
+        PlayerAttributes a = buildBase();
+        a.setIntelligence(2);
+        return a;
+    }
+
+    public static PlayerAttributes buildHighBallSecurity() {
+        PlayerAttributes a = buildBase();
+        a.setIntelligence(10);
+        a.setHandle(9);
+        return a;
+    }
+
+    public static PlayerAttributes buildLowBallSecurity() {
+        PlayerAttributes a = buildBase();
+        return a;
+    }
+
+    public static PlayerAttributes buildMixedSecurity() {
+        PlayerAttributes a = buildBase();
+        return a;
     }
 }
