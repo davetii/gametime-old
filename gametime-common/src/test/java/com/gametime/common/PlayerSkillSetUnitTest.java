@@ -1,7 +1,6 @@
 package com.gametime.common;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import static com.gametime.common.PlayerTestData.*;
