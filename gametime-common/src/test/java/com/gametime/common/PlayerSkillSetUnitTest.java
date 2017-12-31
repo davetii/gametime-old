@@ -96,4 +96,23 @@ public class PlayerSkillSetUnitTest {
         Assert.assertEquals(s.getBallSecurity(), 4.9d, 0d);
     }
 
+    @Test
+    public void ensureHighDefenseReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildHighDefense());
+        Assert.assertEquals(s.getDefense(), 12.4d, 0d);
+    }
+
+    @Test
+    public void ensureLowDefenseReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildLowDefense());
+        Assert.assertEquals(s.getDefense(), 1.1d, 0d);
+    }
+
+    @Test
+    public void ensureMixedDefenseReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildMixedDefense());
+        Assert.assertEquals(s.getDefense(), 9.6d, 0d);
+    }
+
+
 }

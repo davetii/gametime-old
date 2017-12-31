@@ -119,4 +119,27 @@ public class PlayerTestData {
         a.setHandle(2);
         return a;
     }
+
+    public static PlayerAttributes buildHighDefense() {
+        PlayerAttributes a = buildBase();
+        a.setStrength(10);
+        a.setSize(10);
+        return a;
+    }
+
+    public static PlayerAttributes buildLowDefense() {
+        PlayerAttributes a = buildBase();
+        a.setStrength(2);
+        a.setSize(2);
+        return a;
+    }
+
+    public static PlayerAttributes buildMixedDefense() {
+        PlayerAttributes a = buildBase();
+        a.setPerson(8);
+        a.setStrength(9);
+        a.setSize(10);
+        a.setSpeed(2);
+        return a;
+    }
 }

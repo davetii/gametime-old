@@ -120,7 +120,7 @@ public class PlayerSkillSet {
         base = adjustNegativeBase(base, a.getStrength(), 4);
         base = adjustNegativeBase(base, a.getSpeed(), 4);
         base = adjustNegativeBase(base, a.getSize(), 3);
-        return base;
+        return round(base);
     }
 
     private double calcBallSecurity(PlayerAttributes a) {
