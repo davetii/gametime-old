@@ -108,11 +108,15 @@ public class PlayerTestData {
 
     public static PlayerAttributes buildLowBallSecurity() {
         PlayerAttributes a = buildBase();
+        a.setIntelligence(2);
+        a.setHandle(2);
         return a;
     }
 
     public static PlayerAttributes buildMixedSecurity() {
         PlayerAttributes a = buildBase();
+        a.setIntelligence(10);
+        a.setHandle(2);
         return a;
     }
 }

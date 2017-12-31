@@ -4,13 +4,18 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static com.gametime.common.PlayerTestData.buildBase;
-import static com.gametime.common.PlayerTestData.buildHighAcumen;
-import static com.gametime.common.PlayerTestData.buildLowAcumen;
+import static com.gametime.common.PlayerTestData.*;
 
 public class PlayerSkillSetUnitTest {
 
     private PlayerSkillSet s;
+
+    @Test
+    public void ensureAddActsAsExpected() {
+        s = new PlayerSkillSet(buildBase());
+        int[] ints = {1,2,3,4,5};
+        Assert.assertEquals(s.add(ints), 15, 0d);
+    }
 
     @Test
     public void ensureSkillSetRoundWorksAsExpected() {
@@ -73,32 +78,22 @@ public class PlayerSkillSetUnitTest {
         Assert.assertEquals(s.getAcumen(), 2.1d, 0d);
     }
 
-
-
-    /*
     @Test
     public void ensureHighBallSecurityReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildHighBallSecurity());
-        Assert.assertEquals(s.getBallSecurity(), 6d, 0d);
-
+        s = new PlayerSkillSet(buildHighBallSecurity());
+        Assert.assertEquals(s.getBallSecurity(), 10.6d, 0d);
     }
-
 
     @Test
     public void ensureLowBallSecurityReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildLowBallSecurity());
-        Assert.assertEquals(s.getBallSecurity(), 6d, 0d);
-
+        s = new PlayerSkillSet(buildLowBallSecurity());
+        Assert.assertEquals(s.getBallSecurity(), .9d, 0d);
     }
 
     @Test
     public void ensureMixedBallSecurityReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildMixedSecurity());
-        Assert.assertEquals(s.getBallSecurity(), 6d, 0d);
-
+        s = new PlayerSkillSet(buildMixedSecurity());
+        Assert.assertEquals(s.getBallSecurity(), 4.9d, 0d);
     }
-    */
-
-
 
 }
