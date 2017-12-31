@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import static com.gametime.common.PlayerAttributes.PlayerDataToAttributes;
+
 @Component
 public class Player {
 
@@ -31,7 +33,7 @@ public class Player {
         }
         person = new Person(data.getFirstName(), data.getLastName(),
                 data.getHeight(), data.getWeight(), dob);
-        attributes = PlayerAttributes.PlayerDataToAttributes(data);
+        attributes = PlayerDataToAttributes(data);
     }
 
     public Person getPerson() {

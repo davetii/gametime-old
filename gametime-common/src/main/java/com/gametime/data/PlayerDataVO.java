@@ -90,10 +90,7 @@ public class PlayerDataVO {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getAgility() {
-        return agility;
-    }
-
+    public int getAgility() { return agility; }
     public void setAgility(int agility) {
         this.agility = agility;
     }

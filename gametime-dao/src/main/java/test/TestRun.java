@@ -21,11 +21,11 @@ public class TestRun implements CommandLineRunner{
 
     private static final Logger log = LoggerFactory.getLogger(TestRun.class);
 
-    /*
+
     public static void main(String args[]) {
         SpringApplication.run(TestRun.class, args);
     }
-    */
+
 
     @Autowired
     JdbcTemplate jdbcTemplate;

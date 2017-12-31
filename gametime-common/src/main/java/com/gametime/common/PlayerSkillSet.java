@@ -21,7 +21,7 @@ public class PlayerSkillSet {
     private final double teamDefense;
 
     public PlayerSkillSet(PlayerAttributes attribs) {
-        acumen = 0;
+        acumen = calcAcumen(attribs);
         ballSecurity = 0;
         defense = 0;
         defenseRebound =0;
@@ -36,6 +36,11 @@ public class PlayerSkillSet {
         post= 0;
         teamDefense = 0;
     }
+
+    public double calcAcumen(PlayerAttributes attribs) {
+        return 0d;
+    }
+
     public double getAcumen() {
         return acumen;
     }
