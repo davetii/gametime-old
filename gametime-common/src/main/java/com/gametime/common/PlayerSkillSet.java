@@ -84,6 +84,14 @@ public class PlayerSkillSet {
     private double calcPressureDefense(PlayerAttributes a) {
         double base = add( (a.getDesire() * 2), a.getEgo(), (a.getEnergy() * 2), a.getStrength(),
                 a.getSpeed() + a.getIntelligence()) / 8d;
+
+        base = adjustPositiveBase(base, a.getDesire(), 7);
+        base = adjustPositiveBase(base, a.getEnergy(), 8);
+        base = adjustPositiveBase(base, a.getSpeed(), 8);
+
+        base = adjustNegativeBase(base, a.getDesire(), 4);
+        base = adjustNegativeBase(base, a.getEnergy(), 3);
+        base = adjustNegativeBase(base, a.getSpeed(), 3);
         return round(base);
     }
 

@@ -204,4 +204,28 @@ public class PlayerTestData {
         a.setShotSkill(1);
         return a;
     }
+
+    public static PlayerAttributes buildHighPressureDefense() {
+        PlayerAttributes a = buildBase();
+        a.setDesire(8);
+        a.setSpeed(9);
+        a.setEnergy(9);
+        return a;
+    }
+
+    public static PlayerAttributes buildLowPressureDefense() {
+        PlayerAttributes a = buildBase();
+        a.setDesire(2);
+        a.setSpeed(2);
+        a.setEnergy(2);
+        return a;
+    }
+
+    public static PlayerAttributes buildMixedPressureDefense() {
+        PlayerAttributes a = buildBase();
+        a.setDesire(8);
+        a.setSpeed(1);
+        a.setEnergy(7);
+        return a;
+    }
 }

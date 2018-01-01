@@ -157,7 +157,25 @@ public class PlayerSkillSetUnitTest {
 
     @Test
     public void ensureLowFreeThrowsReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildLowFreeThrows());
+        s = new PlayerSkillSet(buildLowFreeThrows());
         Assert.assertEquals(s.getFreeThrows(), 0.7d, 0d);
+    }
+
+    @Test
+    public void ensureHighPressureDefenseReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildHighPressureDefense());
+        Assert.assertEquals(s.getPressureDefense(), 10.3d, 0d);
+    }
+
+    @Test
+    public void ensureLowPressureDefenseReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildLowPressureDefense());
+        Assert.assertEquals(s.getPressureDefense(), -0.9d, 0d);
+    }
+
+    @Test
+    public void ensureMixedPressureDefenseReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildMixedPressureDefense());
+        Assert.assertEquals(s.getPressureDefense(), 4.8d, 0d);
     }
 }
