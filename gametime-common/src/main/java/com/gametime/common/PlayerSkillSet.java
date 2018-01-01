@@ -71,13 +71,29 @@ public class PlayerSkillSet {
         double base = add(a.getIntelligence(), a.getSpeed(), a.getStrength(),
                 a.getShotSelection(), a.getCharisma(), (a.getPerson() * 2),
                 (a.getHandle() * 2), a.getEndurance(), (a.getLuck() * 2), a.getHealth())  / 13d;
-        // high ego is a negqtive
+
+        base = adjustPositiveBase(base, a.getPerson(), 8);
+        base = adjustPositiveBase(base, a.getHandle(), 8);
+        base = adjustPositiveBase(base, a.getLuck(), 7);
+
+        base = adjustNegativeBase(base, a.getHandle(), 3);
+        base = adjustNegativeBase(base, a.getLuck(), 3);
+        base = adjustNegativeBase(base, a.getPerson(), 3);
+
+        if (a.getEgo() > 7) { base -= a.getEgo() - 7; }
         return round(base);
     }
 
     private double calcLongRange(PlayerAttributes a) {
         double base = add((a.getShotSkill() * 3), (a.getShotSelection() * 2), a.getIntelligence(),
                 a.getLuck(), a.getSpeed(), a.getHandle()) / 9d;
+        base = adjustPositiveBase(base, a.getShotSkill(), 8);
+        base = adjustPositiveBase(base, a.getShotSelection(), 7);
+        base = adjustPositiveBase(base, a.getLuck(), 7);
+
+        base = adjustNegativeBase(base, a.getShotSkill(), 3);
+        base = adjustNegativeBase(base, a.getShotSelection(), 4);
+        base = adjustNegativeBase(base, a.getLuck(), 4);
         return round(base);
     }
 

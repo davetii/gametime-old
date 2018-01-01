@@ -228,4 +228,50 @@ public class PlayerTestData {
         a.setEnergy(7);
         return a;
     }
+
+    public static PlayerAttributes buildHighLongRange() {
+        PlayerAttributes a = buildBase();
+        a.setShotSkill(8);
+        a.setShotSelection(9);
+        return a;
+    }
+
+    public static PlayerAttributes buildLowLongRange() {
+        PlayerAttributes a = buildBase();
+        a.setShotSkill(2);
+        a.setShotSelection(2);
+        return a;
+    }
+
+    public static PlayerAttributes buildMixedLongRange() {
+        PlayerAttributes a = buildBase();
+        a.setShotSkill(9);
+        a.setLuck(9);
+        a.setShotSelection(2);
+        return a;
+    }
+
+    public static PlayerAttributes buildHighOffense() {
+        PlayerAttributes a = buildBase();
+        a.setPerson(9);
+        a.setLuck(9);
+        a.setHandle(9);
+        return a;
+    }
+
+    public static PlayerAttributes buildLowOffense() {
+        PlayerAttributes a = buildBase();
+        a.setEgo(9);
+        a.setLuck(2);
+        a.setHandle(2);
+        return a;
+    }
+
+    public static PlayerAttributes buildMixedOffense() {
+        PlayerAttributes a = buildBase();
+        a.setEgo(9);
+        a.setLuck(9);
+        a.setHandle(9);
+        return a;
+    }
 }

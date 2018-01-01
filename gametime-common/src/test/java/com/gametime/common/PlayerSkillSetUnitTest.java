@@ -163,13 +163,13 @@ public class PlayerSkillSetUnitTest {
 
     @Test
     public void ensureHighPressureDefenseReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildHighPressureDefense());
+        s = new PlayerSkillSet(buildHighPressureDefense());
         Assert.assertEquals(s.getPressureDefense(), 10.3d, 0d);
     }
 
     @Test
     public void ensureLowPressureDefenseReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildLowPressureDefense());
+        s = new PlayerSkillSet(buildLowPressureDefense());
         Assert.assertEquals(s.getPressureDefense(), -0.9d, 0d);
     }
 
@@ -178,4 +178,41 @@ public class PlayerSkillSetUnitTest {
         s = new PlayerSkillSet(PlayerTestData.buildMixedPressureDefense());
         Assert.assertEquals(s.getPressureDefense(), 4.8d, 0d);
     }
+
+    @Test
+    public void ensureHighLongRangeReturnsExpected() {
+        s = new PlayerSkillSet(buildHighLongRange());
+        Assert.assertEquals(s.getLongRange(), 8.9d, 0d);
+    }
+
+    @Test
+    public void ensureLowLongRangeReturnsExpected() {
+        s = new PlayerSkillSet(buildLowLongRange());
+        Assert.assertEquals(s.getLongRange(), 0.3d, 0d);
+    }
+
+    @Test
+    public void ensureMixedLongRangeReturnsExpected() {
+        s = new PlayerSkillSet(buildMixedLongRange());
+        Assert.assertEquals(s.getLongRange(), 7.1d, 0d);
+    }
+
+    @Test
+    public void ensureHighOffenseReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildHighOffense());
+        Assert.assertEquals(s.getOffense(), 10.8d, 0d);
+    }
+
+    @Test
+    public void ensureLowOffenseReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildLowOffense());
+        Assert.assertEquals(s.getOffense(), 0.1d, 0d);
+    }
+
+    @Test
+    public void ensureMixedOffenseReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildMixedOffense());
+        Assert.assertEquals(s.getOffense(), 7.2d, 0d);
+    }
+
 }
