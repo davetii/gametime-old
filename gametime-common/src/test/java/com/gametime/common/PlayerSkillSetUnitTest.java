@@ -149,5 +149,15 @@ public class PlayerSkillSetUnitTest {
         Assert.assertEquals(s.getDrive(), 6.8d, 0d);
     }
 
+    @Test
+    public void ensureHighFreeThrowsReturnsExpected() {
+        s = new PlayerSkillSet(buildHighFreeThrows());
+        Assert.assertEquals(s.getFreeThrows(), 10.9d, 0d);
+    }
 
+    @Test
+    public void ensureLowFreeThrowsReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildLowFreeThrows());
+        Assert.assertEquals(s.getFreeThrows(), 0.7d, 0d);
+    }
 }

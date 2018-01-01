@@ -192,4 +192,16 @@ public class PlayerTestData {
         a.setShotSkill(10);
         return a;
     }
+
+    public static PlayerAttributes buildHighFreeThrows() {
+        PlayerAttributes a = buildBase();
+        a.setShotSkill(10);
+        return a;
+    }
+
+    public static PlayerAttributes buildLowFreeThrows() {
+        PlayerAttributes a = buildBase();
+        a.setShotSkill(1);
+        return a;
+    }
 }
