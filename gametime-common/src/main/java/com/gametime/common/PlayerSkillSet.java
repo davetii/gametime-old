@@ -64,6 +64,19 @@ public class PlayerSkillSet {
     private double calcOffenseRebounds(PlayerAttributes a) {
         double base = add( (a.getStrength() * 3), (a.getEnergy() * 2), (a.getDesire() * 2),
                 (a.getLuck() * 2), a.getEndurance(), (a.getSize() * 2), a.getSpeed()) / 13d;
+
+        base = adjustPositiveBase(base, a.getDesire(), 7);
+        base = adjustPositiveBase(base, a.getSize(), 8);
+        base = adjustPositiveBase(base, a.getEnergy(), 8);
+        base = adjustPositiveBase(base, a.getStrength(), 8);
+        base = adjustPositiveBase(base, a.getAgility(), 8);
+
+
+        base = adjustNegativeBase(base, a.getDesire(), 4);
+        base = adjustNegativeBase(base, a.getSize(), 3);
+        base = adjustNegativeBase(base, a.getEnergy(), 3);
+        base = adjustNegativeBase(base, a.getStrength(), 3);
+
         return round(base);
     }
 

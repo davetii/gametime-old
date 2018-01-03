@@ -199,20 +199,38 @@ public class PlayerSkillSetUnitTest {
 
     @Test
     public void ensureHighOffenseReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildHighOffense());
+        s = new PlayerSkillSet(buildHighOffense());
         Assert.assertEquals(s.getOffense(), 10.8d, 0d);
     }
 
     @Test
     public void ensureLowOffenseReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildLowOffense());
+        s = new PlayerSkillSet(buildLowOffense());
         Assert.assertEquals(s.getOffense(), 0.1d, 0d);
     }
 
     @Test
     public void ensureMixedOffenseReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildMixedOffense());
+        s = new PlayerSkillSet(buildMixedOffense());
         Assert.assertEquals(s.getOffense(), 7.2d, 0d);
+    }
+
+    @Test
+    public void ensureHighOffenseReboundsReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildHighOffensRebounds());
+        Assert.assertEquals(s.getOffenseRebound(), 11.8d, 0d);
+    }
+
+    @Test
+    public void ensureLowOffenseReboundsReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildLowOffenseRebounds());
+        Assert.assertEquals(s.getOffenseRebound(), -0.6d, 0d);
+    }
+
+    @Test
+    public void ensureMixedOffenseReboundsReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildMixedOffenseRebounds());
+        Assert.assertEquals(s.getOffenseRebound(), 8.3d, 0d);
     }
 
 }

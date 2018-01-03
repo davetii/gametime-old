@@ -274,4 +274,29 @@ public class PlayerTestData {
         a.setHandle(9);
         return a;
     }
+
+    public static PlayerAttributes buildHighOffensRebounds() {
+        PlayerAttributes a = buildBase();
+        a.setDesire(9);
+        a.setStrength(10);
+        a.setAgility(9);
+        return a;
+    }
+
+    public static PlayerAttributes buildLowOffenseRebounds() {
+        PlayerAttributes a = buildBase();
+        a.setDesire(2);
+        a.setStrength(2);
+        a.setEnergy(2);
+        return a;
+    }
+
+    public static PlayerAttributes buildMixedOffenseRebounds() {
+        PlayerAttributes a = buildBase();
+        a.setDesire(2);
+        a.setStrength(10);
+        a.setAgility(9);
+        a.setEnergy(9);
+        return a;
+    }
 }
