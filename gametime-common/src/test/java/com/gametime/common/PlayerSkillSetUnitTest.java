@@ -235,20 +235,74 @@ public class PlayerSkillSetUnitTest {
 
     @Test
     public void ensureHighPassingReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildHighPassing());
+        s = new PlayerSkillSet(buildHighPassing());
         Assert.assertEquals(s.getPassing(), 11.9d, 0d);
     }
 
     @Test
     public void ensureLowPassingReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildLowPassing());
+        s = new PlayerSkillSet(buildLowPassing());
         Assert.assertEquals(s.getPassing(), -1.1d, 0d);
     }
 
     @Test
     public void ensureMixedPassingReturnsExpected() {
-        s = new PlayerSkillSet(PlayerTestData.buildMixedPassing());
+        s = new PlayerSkillSet(buildMixedPassing());
         Assert.assertEquals(s.getPassing(), 5.9d, 0d);
+    }
+
+    @Test
+    public void ensureHighPerimeterReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildHighPerimeter());
+        Assert.assertEquals(s.getPerimeter(), 0.0d, 0d);
+    }
+
+    @Test
+    public void ensureLowPerimeterReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildLowPerimeter());
+        Assert.assertEquals(s.getPerimeter(), 0.0d, 0d);
+    }
+
+    @Test
+    public void ensureMixedPerimeterReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildMixedPerimeter());
+        Assert.assertEquals(s.getPerimeter(), 0.0d, 0d);
+    }
+
+    @Test
+    public void ensureHighPostReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildHighPost());
+        Assert.assertEquals(s.getPost(), 0.0d, 0d);
+    }
+
+    @Test
+    public void ensureLowPostReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildLowPost());
+        Assert.assertEquals(s.getPost(), 0.0d, 0d);
+    }
+
+    @Test
+    public void ensureMixedPostReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildMixedPost());
+        Assert.assertEquals(s.getPost(), 0.0d, 0d);
+    }
+
+    @Test
+    public void ensureHighTeamDefenseReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildHighTeamDefense());
+        Assert.assertEquals(s.getTeamDefense(), 0.0d, 0d);
+    }
+
+    @Test
+    public void ensureLowTeamDefenseReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildLowTeamDefense());
+        Assert.assertEquals(s.getTeamDefense(), 0.0d, 0d);
+    }
+
+    @Test
+    public void ensureMixedTeamDefenseReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildMixedTeamDefense());
+        Assert.assertEquals(s.getTeamDefense(), 0.0d, 0d);
     }
 
 }

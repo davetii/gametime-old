@@ -40,6 +40,9 @@ public class PlayerSkillSet {
     private double calcTeamDefense(PlayerAttributes a) {
         double base = add(a.getIntelligence(), a.getDesire(), a.getPerson(), a.getHealth(),
                 a.getCharisma(), a.getStrength(), a.getSpeed(), a.getEndurance()) / 8d;
+
+        base = adjustPositiveBase(base, a.getPerson(), 7);
+        base = adjustNegativeBase(base, a.getStrength(), 4);
         return round(base);
     }
 
@@ -47,12 +50,24 @@ public class PlayerSkillSet {
         double base = add( (a.getShotSkill() * 2), a.getShotSelection(), a.getIntelligence(), a.getLuck(),
                 a.getDesire(), a.getAgility(), (a.getStrength() * 2), (a.getSize() * 2),
                 a.getEnergy(), a.getEgo(), a.getEndurance()) / 14d;
+
+        base = adjustPositiveBase(base, a.getShotSelection(), 7);
+        base = adjustPositiveBase(base, a.getStrength(), 7);
+        base = adjustPositiveBase(base, a.getDesire(), 8);
+        base = adjustNegativeBase(base, a.getShotSelection(), 4);
+        base = adjustNegativeBase(base, a.getStrength(), 4);
+
         return round(base);
     }
 
     private double calcPerimeter(PlayerAttributes a) {
         double base = add((a.getShotSkill() * 2), (a.getShotSelection() * 3), a.getIntelligence(),
                 a.getLuck(), a.getSpeed(), a.getHandle(), a.getAgility()) / 10d;
+
+        base = adjustPositiveBase(base, a.getShotSkill(), 7);
+        base = adjustPositiveBase(base, a.getShotSelection(), 7);
+        base = adjustNegativeBase(base, a.getShotSkill(), 4);
+        base = adjustNegativeBase(base, a.getShotSelection(), 4);
         return round(base);
     }
 
