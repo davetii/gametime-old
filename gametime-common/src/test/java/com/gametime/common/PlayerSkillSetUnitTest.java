@@ -251,6 +251,7 @@ public class PlayerSkillSetUnitTest {
         Assert.assertEquals(s.getPassing(), 5.9d, 0d);
     }
 
+    /*
     @Test
     public void ensureHighPerimeterReturnsExpected() {
         s = new PlayerSkillSet(PlayerTestData.buildHighPerimeter());
@@ -304,5 +305,6 @@ public class PlayerSkillSetUnitTest {
         s = new PlayerSkillSet(PlayerTestData.buildMixedTeamDefense());
         Assert.assertEquals(s.getTeamDefense(), 0.0d, 0d);
     }
+    */
 
 }
