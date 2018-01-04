@@ -233,4 +233,22 @@ public class PlayerSkillSetUnitTest {
         Assert.assertEquals(s.getOffenseRebound(), 8.3d, 0d);
     }
 
+    @Test
+    public void ensureHighPassingReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildHighPassing());
+        Assert.assertEquals(s.getPassing(), 11.9d, 0d);
+    }
+
+    @Test
+    public void ensureLowPassingReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildLowPassing());
+        Assert.assertEquals(s.getPassing(), -1.1d, 0d);
+    }
+
+    @Test
+    public void ensureMixedPassingReturnsExpected() {
+        s = new PlayerSkillSet(PlayerTestData.buildMixedPassing());
+        Assert.assertEquals(s.getPassing(), 5.9d, 0d);
+    }
+
 }

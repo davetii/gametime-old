@@ -57,7 +57,13 @@ public class PlayerSkillSet {
     }
 
     private double calcPassing(PlayerAttributes a) {
-        double base = add((a.getHandle() * 3), a.getSpeed(), a.getShotSelection(), (a.getSpeed() * 2)) / 7d;
+        double base = add((a.getHandle() * 3), a.getSpeed(), a.getShotSelection(), (a.getIntelligence() * 2)) / 7d;
+
+        base = adjustPositiveBase(base, a.getHandle(), 7);
+        base = adjustPositiveBase(base, a.getIntelligence(), 7);
+
+        base = adjustNegativeBase(base, a.getHandle(), 4);
+        base = adjustNegativeBase(base, a.getIntelligence(), 4);
         return round(base);
     }
 

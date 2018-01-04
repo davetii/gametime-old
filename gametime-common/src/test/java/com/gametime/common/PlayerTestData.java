@@ -299,4 +299,25 @@ public class PlayerTestData {
         a.setEnergy(9);
         return a;
     }
+
+    public static PlayerAttributes buildHighPassing() {
+        PlayerAttributes a = buildBase();
+        a.setHandle(9);
+        a.setIntelligence(9);
+        return a;
+    }
+
+    public static PlayerAttributes buildLowPassing() {
+        PlayerAttributes a = buildBase();
+        a.setHandle(2);
+        a.setIntelligence(2);
+        return a;
+    }
+
+    public static PlayerAttributes buildMixedPassing() {
+        PlayerAttributes a = buildBase();
+        a.setHandle(9);
+        a.setIntelligence(2);
+        return a;
+    }
 }
