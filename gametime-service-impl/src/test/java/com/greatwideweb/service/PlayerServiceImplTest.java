@@ -25,7 +25,7 @@ public class PlayerServiceImplTest {
     private final String TEST_LAST_NAME= "TEST_LAST_NAME";
     private final String TEST_FIRST_NAME= "TEST_FIRST_NAME";
     private final String TEST_WEIGHT= "TEST_WEIGHT";
-    private final int TEST_TEAMID= 456;
+    private final int TEST_TEAM_ID= 456;
     private final int TEST_AGILITY = 3;
     private final int TEST_INTELLIGENCE = 2;
     private final int TEST_ENDURANCE = 7;
@@ -46,7 +46,7 @@ public class PlayerServiceImplTest {
     public void ensureGetPlayerReturnsExpected() {
         Player p = service.getPlayer(TEST_ID);
         Assert.assertEquals(Long.valueOf(p.getId()), Long.valueOf(TEST_ID));
-        Assert.assertEquals(Long.valueOf(p.getTeamId()), Long.valueOf(TEST_TEAMID));
+        Assert.assertEquals(Long.valueOf(p.getTeamId()), Long.valueOf(TEST_TEAM_ID));
 
         Person pn = p.getPerson();
         Assert.assertEquals(pn.getLastName(), TEST_LAST_NAME);
@@ -71,7 +71,7 @@ public class PlayerServiceImplTest {
             vo.setLastName(TEST_LAST_NAME);
             vo.setHeight(TEST_HEIGHT);
             vo.setWeight(TEST_WEIGHT);
-            vo.setTeamId(TEST_TEAMID);
+            vo.setTeamId(TEST_TEAM_ID);
             vo.setDateOfBirth(TEST_DATE_OF_BIRTH);
 
             vo.setAgility(TEST_AGILITY);
