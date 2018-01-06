@@ -317,39 +317,67 @@ public class PlayerTestData {
     }
 
     static PlayerAttributes buildHighPerimeter() {
-        return buildBase();
+        PlayerAttributes a = buildBase();
+        a.setShotSkill(9);
+        a.setShotSelection(9);
+        return a;
     }
 
-
     static PlayerAttributes buildLowPerimeter() {
-        return buildBase();
+        PlayerAttributes a = buildBase();
+        a.setShotSkill(2);
+        a.setShotSelection(2);
+        return a;
     }
 
     static PlayerAttributes buildMixedPerimeter() {
-        return buildBase();
+        PlayerAttributes a = buildBase();
+        a.setShotSkill(9);
+        a.setShotSelection(2);
+        return a;
     }
 
     static PlayerAttributes buildHighPost() {
-        return buildBase();
+        PlayerAttributes a = buildBase();
+        a.setStrength(10);
+        a.setDesire(9);
+        a.setShotSelection(9);
+        return a;
     }
 
     static PlayerAttributes buildLowPost() {
-        return buildBase();
+        PlayerAttributes a = buildBase();
+        a.setStrength(2);
+        a.setShotSelection(2);
+        return a;
     }
 
     static PlayerAttributes buildMixedPost() {
-        return buildBase();
+        PlayerAttributes a = buildBase();
+        a.setStrength(2);
+        a.setDesire(9);
+        a.setShotSelection(10);
+        return a;
     }
 
     static PlayerAttributes buildHighTeamDefense() {
-        return buildBase();
+        PlayerAttributes a = buildBase();
+        a.setPerson(9);
+        a.setEndurance(9);
+        return a;
     }
 
     static PlayerAttributes buildLowTeamDefense() {
-        return buildBase();
+        PlayerAttributes a = buildBase();
+        a.setPerson(2);
+        a.setEndurance(2);
+        return a;
     }
 
     static PlayerAttributes buildMixedTeamDefense() {
-        return buildBase();
+        PlayerAttributes a = buildBase();
+        a.setPerson(10);
+        a.setEndurance(2);
+        return a;
     }
 }

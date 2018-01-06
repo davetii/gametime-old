@@ -42,7 +42,9 @@ public class PlayerSkillSet {
                 a.getCharisma(), a.getStrength(), a.getSpeed(), a.getEndurance()) / 8d;
 
         base = adjustPositiveBase(base, a.getPerson(), 7);
-        base = adjustNegativeBase(base, a.getStrength(), 4);
+        base = adjustPositiveBase(base, a.getEndurance(), 7);
+        base = adjustNegativeBase(base, a.getPerson(), 4);
+        base = adjustNegativeBase(base, a.getEndurance(), 4);
         return round(base);
     }
 
